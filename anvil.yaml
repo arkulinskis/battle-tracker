@@ -1,0 +1,395 @@
+allow_embedding: false
+db_schema:
+  app_settings:
+    client: none
+    columns:
+    - admin_ui:
+        order: 0
+        width: 200
+      name: key
+      type: string
+    - admin_ui:
+        order: 1
+        width: 200
+      name: value
+      type: simpleObject
+    indexes: []
+    server: full
+    title: App settings
+  drops:
+    client: none
+    columns:
+    - admin_ui:
+        order: 0
+        width: 200
+      name: feed
+      target: feeds
+      type: link_single
+    - admin_ui:
+        order: 1
+        width: 200
+      name: uploader
+      target: users
+      type: link_single
+    - admin_ui:
+        order: 2
+        width: 200
+      name: filename
+      type: string
+    - admin_ui:
+        order: 3
+        width: 200
+      name: fmt
+      type: string
+    - admin_ui:
+        order: 4
+        width: 200
+      name: source
+      type: string
+    - admin_ui:
+        order: 5
+        width: 200
+      name: summary
+      type: simpleObject
+    - admin_ui:
+        order: 6
+        width: 200
+      name: features
+      type: simpleObject
+    - admin_ui:
+        order: 7
+        width: 200
+      name: n
+      type: number
+    - admin_ui:
+        order: 8
+        width: 200
+      name: data_end
+      type: datetime
+    - admin_ui:
+        order: 9
+        width: 200
+      name: created
+      type: datetime
+    - admin_ui:
+        order: 10
+        width: 200
+      name: is_demo
+      type: bool
+    indexes: []
+    server: full
+    title: Drops
+  feedback:
+    client: none
+    columns:
+    - admin_ui:
+        order: 0
+        width: 200
+      name: user
+      target: users
+      type: link_single
+    - admin_ui:
+        order: 1
+        width: 200
+      name: name
+      type: string
+    - admin_ui:
+        order: 2
+        width: 200
+      name: email
+      type: string
+    - admin_ui:
+        order: 3
+        width: 200
+      name: kind
+      type: string
+    - admin_ui:
+        order: 4
+        width: 200
+      name: message
+      type: string
+    - admin_ui:
+        order: 5
+        width: 200
+      name: context
+      type: simpleObject
+    - admin_ui:
+        order: 6
+        width: 200
+      name: status
+      type: string
+    - admin_ui:
+        order: 7
+        width: 200
+      name: note
+      type: string
+    - admin_ui:
+        order: 8
+        width: 200
+      name: created
+      type: datetime
+    indexes: []
+    server: full
+    title: Feedback
+  feeds:
+    client: none
+    columns:
+    - admin_ui:
+        order: 0
+        width: 200
+      name: owner
+      target: users
+      type: link_single
+    - admin_ui:
+        order: 1
+        width: 200
+      name: name
+      type: string
+    - admin_ui:
+        order: 2
+        width: 200
+      name: description
+      type: string
+    - admin_ui:
+        order: 3
+        width: 200
+      name: kind
+      type: string
+    - admin_ui:
+        order: 4
+        width: 200
+      name: visibility
+      type: string
+    - admin_ui:
+        order: 5
+        width: 200
+      name: classification
+      type: string
+    - admin_ui:
+        order: 6
+        width: 200
+      name: color
+      type: string
+    - admin_ui:
+        order: 7
+        width: 200
+      name: invite_code
+      type: string
+    - admin_ui:
+        order: 8
+        width: 200
+      name: ingest_key
+      type: string
+    - admin_ui:
+        order: 9
+        width: 200
+      name: featured
+      type: bool
+    - admin_ui:
+        order: 10
+        width: 200
+      name: n_drops
+      type: number
+    - admin_ui:
+        order: 11
+        width: 200
+      name: n_features
+      type: number
+    - admin_ui:
+        order: 12
+        width: 200
+      name: formats
+      type: simpleObject
+    - admin_ui:
+        order: 13
+        width: 200
+      name: created
+      type: datetime
+    - admin_ui:
+        order: 14
+        width: 200
+      name: updated
+      type: datetime
+    - admin_ui:
+        order: 15
+        width: 200
+      name: is_demo
+      type: bool
+    indexes: []
+    server: full
+    title: Feeds
+  subscriptions:
+    client: none
+    columns:
+    - admin_ui:
+        order: 0
+        width: 200
+      name: user
+      target: users
+      type: link_single
+    - admin_ui:
+        order: 1
+        width: 200
+      name: feed
+      target: feeds
+      type: link_single
+    - admin_ui:
+        order: 2
+        width: 200
+      name: shown
+      type: bool
+    - admin_ui:
+        order: 3
+        width: 200
+      name: created
+      type: datetime
+    - admin_ui:
+        order: 4
+        width: 200
+      name: is_demo
+      type: bool
+    indexes: []
+    server: full
+    title: Subscriptions
+  users:
+    client: none
+    columns:
+    - admin_ui:
+        order: 0
+        width: 200
+      client_hidden: false
+      name: email
+      type: string
+    - admin_ui:
+        order: 1
+        width: 200
+      client_hidden: true
+      name: enabled
+      type: bool
+    - admin_ui:
+        order: 2
+        width: 200
+      client_hidden: true
+      name: last_login
+      type: datetime
+    - admin_ui:
+        order: 3
+        width: 200
+      client_hidden: true
+      name: password_hash
+      type: string
+    - admin_ui:
+        order: 4
+        width: 200
+      client_hidden: true
+      name: n_password_failures
+      type: number
+    - admin_ui:
+        order: 5
+        width: 200
+      client_hidden: true
+      name: confirmed_email
+      type: bool
+    - admin_ui:
+        order: 6
+        width: 200
+      client_hidden: true
+      name: signed_up
+      type: datetime
+    - admin_ui:
+        order: 7
+        width: 200
+      client_hidden: false
+      name: display_name
+      type: string
+    - admin_ui:
+        order: 8
+        width: 200
+      client_hidden: false
+      name: is_admin
+      type: bool
+    - admin_ui:
+        order: 9
+        width: 200
+      client_hidden: false
+      name: is_demo
+      type: bool
+    - admin_ui:
+        order: 10
+        width: 200
+      client_hidden: false
+      name: last_seen
+      type: datetime
+    - admin_ui:
+        order: 11
+        width: 200
+      client_hidden: false
+      name: legal_version
+      type: string
+    - admin_ui:
+        order: 12
+        width: 200
+      client_hidden: false
+      name: legal_accepted_at
+      type: datetime
+    - admin_ui:
+        order: 13
+        width: 200
+      client_hidden: false
+      name: legal_source
+      type: string
+    - admin_ui:
+        order: 14
+        width: 200
+      client_hidden: false
+      name: bt_onboarded
+      type: bool
+    indexes: []
+    server: full
+    title: Users
+metadata:
+  description: Subscribe to and upload STANAG 4607 GMTI, 4609 FMV metadata, 4545, CoT, NFFI, NVG and more, and see it all
+    on one map in MIL-STD-2525 / APP-6 symbols.
+  logo_img: asset:icon-512.png
+  title: Battle Tracker
+name: Battle Tracker
+native_deps:
+  head_html: "<script src=\"_/theme/legal-kit.js?v=6e70727513\"></script>\n<meta name=\"viewport\" content=\"width=device-width,\
+    \ initial-scale=1, viewport-fit=cover\">\n<meta name=\"theme-color\" content=\"#0d0f11\">\n<meta name=\"apple-mobile-web-app-capable\"\
+    \ content=\"yes\">\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"\
+    https://fonts.gstatic.com\" crossorigin>\n<link href=\"https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap\"\
+    \ rel=\"stylesheet\">\n<!-- Map (Leaflet) and military symbols (milsymbol: MIL-STD-2525 / APP-6), pinned versions -->\n\
+    <link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.9.4/dist/leaflet.css\" crossorigin=\"\">\n<script src=\"https://unpkg.com/leaflet@1.9.4/dist/leaflet.js\"\
+    \ crossorigin=\"\"></script>\n<script src=\"https://unpkg.com/milsymbol@3.0.4/dist/milsymbol.js\" crossorigin=\"\"></script>\n\
+    <link id=\"ui-favicon\" rel=\"icon\" type=\"image/svg+xml\" href=\"_/theme/icon.svg?v=0ef890461d\">\n<link rel=\"apple-touch-icon\"\
+    \ href=\"_/theme/icon-180.png?v=0ef890461d\">\n<script>\n/* Keep our tab icon: Anvil adds its own <link rel=\"icon\">,\
+    \ so drop any other icon link. */\n(function () {\n  function keep() {\n    var ours = document.getElementById('ui-favicon');\n\
+    \    if (!ours) return;\n    document.querySelectorAll('link[rel~=\"icon\"]').forEach(function (l) { if (l !== ours) l.remove();\
+    \ });\n  }\n  keep();\n  document.addEventListener('DOMContentLoaded', keep);\n  window.addEventListener('load', keep);\n\
+    })();\n</script>\n<link rel=\"stylesheet\" href=\"_/theme/app.css?v=b433037be8\">\n<script src=\"_/theme/app.js?v=3e1644b980\"\
+    ></script>\n"
+package_name: Battle_Tracker
+runtime_options:
+  client_version: '3'
+  server_spec:
+    base: python314
+  version: 3
+services:
+- client_config:
+    enable_v2: true
+  server_config: {}
+  source: /runtime/services/tables.yml
+- client_config:
+    allow_remember_me: true
+    allow_signup: true
+    confirm_email: false
+    enable_automatically: true
+    remember_me_days: 30
+    require_secure_passwords: true
+    use_email: true
+  server_config:
+    user_table: users
+  source: /runtime/services/anvil/users.yml
+startup:
+  module: Main
+  type: form

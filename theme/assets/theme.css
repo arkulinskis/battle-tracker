@@ -1,0 +1,31 @@
+/* theme.css: Anvil puts this file in the page itself, so it applies before the app has loaded.
+   It styles Anvil's loading spinner (shown while the app starts and during server calls) as the app icon
+   (url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Cdefs%3E%3ClinearGradient id=%22s%22 x1=%220%22 y1=%220%22 x2=%220%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%232e3338%22/%3E%3Cstop offset=%22.55%22 stop-color=%22%231a1d21%22/%3E%3Cstop offset=%221%22 stop-color=%22%23101214%22/%3E%3C/linearGradient%3E%3ClinearGradient id=%22m%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%23ffc35a%22/%3E%3Cstop offset=%22.5%22 stop-color=%22%23ff7a2f%22/%3E%3Cstop offset=%221%22 stop-color=%22%23e2470f%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22url%28%23s%29%22/%3E%3Crect x=%221.5%22 y=%221.5%22 width=%2261%22 height=%2261%22 rx=%2212.5%22 fill=%22none%22 stroke=%22%23ffffff%22 stroke-opacity=%22.12%22 stroke-width=%221.5%22/%3E%3Crect x=%2210%22 y=%2217%22 width=%2244%22 height=%2230%22 rx=%222.5%22 fill=%22url%28%23m%29%22/%3E%3Cpath d=%22M11.5 18.5 52.5 45.5M52.5 18.5 11.5 45.5%22 stroke=%22%231a0c04%22 stroke-width=%225%22 stroke-linecap=%22round%22/%3E%3Crect x=%2210%22 y=%2217%22 width=%2244%22 height=%2230%22 rx=%222.5%22 fill=%22none%22 stroke=%22%231a0c04%22 stroke-opacity=%22.35%22 stroke-width=%221.5%22/%3E%3Ccircle cx=%2232%22 cy=%2210%22 r=%222.6%22 fill=%22%23ffc35a%22/%3E%3Ccircle cx=%2232%22 cy=%2254%22 r=%222.6%22 fill=%22%23ffc35a%22 fill-opacity=%22.55%22/%3E%3C/svg%3E") is replaced by assets/icon.svg when syncing). Keep the colours in step with web/core.css.
+   Anvil substitutes its theme-colour tokens (percent sign, "color:", a name, percent sign) in this file,
+   so never write that pattern here. */
+html, body { background: #e4e7ea; }
+@media (prefers-color-scheme: dark) { html:not([data-theme="light"]), html:not([data-theme="light"]) body { background: #0c0e10; } }
+html[data-theme="dark"], html[data-theme="dark"] body { background: #0c0e10; }
+
+html .anvil-spinner, #loadingSpinner {
+  --anvil-spinner-size: 88px;
+  width: 88px !important; height: 88px !important; top: calc(50% - 44px); left: calc(50% - 44px);
+  border-radius: 22px !important; background: #16191c !important; background-image: none !important; color: transparent;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, .35), 0 0 0 1px rgba(255, 255, 255, .06), 0 0 40px rgba(255, 122, 47, .25) !important;
+  animation: app-breathe 1.4s ease-in-out infinite;
+}
+html .anvil-spinner .anvil-spinner-svg, #loadingSpinner > svg, #loadingSpinner > img { display: none !important; }
+html .anvil-spinner::after, #loadingSpinner::after {
+  content: ""; position: absolute; inset: 10px; border-radius: 14px;
+  background: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Cdefs%3E%3ClinearGradient id=%22s%22 x1=%220%22 y1=%220%22 x2=%220%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%232e3338%22/%3E%3Cstop offset=%22.55%22 stop-color=%22%231a1d21%22/%3E%3Cstop offset=%221%22 stop-color=%22%23101214%22/%3E%3C/linearGradient%3E%3ClinearGradient id=%22m%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%23ffc35a%22/%3E%3Cstop offset=%22.5%22 stop-color=%22%23ff7a2f%22/%3E%3Cstop offset=%221%22 stop-color=%22%23e2470f%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22url%28%23s%29%22/%3E%3Crect x=%221.5%22 y=%221.5%22 width=%2261%22 height=%2261%22 rx=%2212.5%22 fill=%22none%22 stroke=%22%23ffffff%22 stroke-opacity=%22.12%22 stroke-width=%221.5%22/%3E%3Crect x=%2210%22 y=%2217%22 width=%2244%22 height=%2230%22 rx=%222.5%22 fill=%22url%28%23m%29%22/%3E%3Cpath d=%22M11.5 18.5 52.5 45.5M52.5 18.5 11.5 45.5%22 stroke=%22%231a0c04%22 stroke-width=%225%22 stroke-linecap=%22round%22/%3E%3Crect x=%2210%22 y=%2217%22 width=%2244%22 height=%2230%22 rx=%222.5%22 fill=%22none%22 stroke=%22%231a0c04%22 stroke-opacity=%22.35%22 stroke-width=%221.5%22/%3E%3Ccircle cx=%2232%22 cy=%2210%22 r=%222.6%22 fill=%22%23ffc35a%22/%3E%3Ccircle cx=%2232%22 cy=%2254%22 r=%222.6%22 fill=%22%23ffc35a%22 fill-opacity=%22.55%22/%3E%3C/svg%3E") center / contain no-repeat;
+}
+html .anvil-spinner::before, #loadingSpinner::before {
+  content: ""; position: absolute; inset: -7px; border-radius: 28px; border: 3px solid transparent;
+  border-top-color: #ff7a2f; border-right-color: #f2b646; animation: app-turn 1s linear infinite;
+}
+@keyframes app-turn { to { transform: rotate(360deg); } }
+@keyframes app-breathe { 50% { transform: scale(.94); } }
+@media (prefers-reduced-motion: reduce) {
+  html .anvil-spinner, #loadingSpinner { animation: none; }
+  html .anvil-spinner::before, #loadingSpinner::before { animation-duration: 3s; }
+}
