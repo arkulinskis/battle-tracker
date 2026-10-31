@@ -6,7 +6,7 @@ STANAG 4676 tracks, STANAG 5527 NFFI, Cursor on Target, NVG, KML/KMZ, GeoJSON, C
 map in MIL-STD-2525C / APP-6B symbols, with a replay timeline. "Metallic forge" look. Built on [Anvil](https://anvil.works).
 
 - **App repo:** github.com/arkulinskis/battle-tracker (branch `master`). Anvil pulls `master`.
-- **Live:** not published yet (planned: battletracker.anvil.app).
+- **Live:** https://battletracker.anvil.app
 
 ## What it does
 
